@@ -1,18 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <button @click="hdlGetReport">Get New Weather</button>
+    <Weather :data="initialWeather"/>
   </div>
 </template>
 
 <script lang="ts">
+import weather from './assets/weather';
+import { IWeather, Summary } from './assets/types';
+
 import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import Weather from './components/Weather.vue';
 
 export default Vue.extend({
   name: 'app',
   components: {
-    HelloWorld
+    Weather,
+  },
+  data() {
+    return {
+      weather: weather,
+      initialWeather: weather[0]
+    };
+  },
+  methods:{
+     hdlGetReport(){
+       let randomNumber =Math.floor(Math.random() * 5); 
+       this.initialWeather  = weather[randomNumber]
+     }
   }
 });
 </script>
@@ -25,5 +40,8 @@ export default Vue.extend({
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+button {
+  margin-bottom: 20px;
 }
 </style>

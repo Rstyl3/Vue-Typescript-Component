@@ -1,24 +1,24 @@
-# ts-app
+# Vue typscript with components
+Simple use of typescript together with components
 
-## Project setup
+### Installation 
 ```
-npm install
+vue create project-name
 ```
+then pick:
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+![Npm installation](./src/assets/pic1.png)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+![Npm installation](./src/assets/pic2.png)
 
-### Lints and fixes files
-```
-npm run lint
-```
+### main.ts
+The equivalent of main.js; the entry file for the project.
+
+### shims-tsx.d.ts
+Allows the use of .tsx files. Read more about this here. https://www.typescriptlang.org/docs/handbook/jsx.html
+
+### shims-vue.d.ts
+Allows .vue single file components to be imported and used.
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
